@@ -1,0 +1,19 @@
+<li li [ngClass]="{'list-group-item': true,
+'list-group-item-success': post.loveIts > 0,
+'list-group-item-danger': post.loveIts < 0}">
+    <div class="right-content">
+
+            <h2>{{post.title}}</h2>
+   
+            <h3 class="text-right" style="color: gray">{{post.created_at | date:'short'}}</h3>
+       
+    </div>
+
+    <p>{{post.content}}</p>
+    <div class="container-button">
+        <button class="btn btn-success" (click)="OnLike()" [ngStyle]="{'margin':'5px'}"> Like</button>
+        <button class="btn btn-danger" (click)="OnDislike()" [ngStyle]="{'margin':'5px'}">Dislike</button>
+        <p [ngClass]="{'list-group-item': true}" [ngStyle]="{'width': '50px', 'margin':'5px'}">{{post.loveIts}}</p>
+    </div>
+
+</li>
